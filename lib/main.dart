@@ -4,6 +4,12 @@ void main() {
   runApp(const MyApp());
 }
 
+String name = 'archana raj';
+int number = 1;
+double pi = 3.14;
+List myList = ['archa', 'rajeevan'];
+Map<String, dynamic> myMap = {'String': 'value', 'String2': 9874563210};
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -11,6 +17,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         // This is the theme of your application.
@@ -28,7 +35,11 @@ class MyApp extends StatelessWidget {
         //
         // This works for code too, not just values: Most code changes can be
         // tested with just a hot reload.
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.deepPurple,
+          brightness: Brightness.dark,
+        ),
+        useMaterial3: true,
       ),
       home: const MyHomePage(title: 'Amal test app'),
     );
@@ -88,7 +99,26 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
         // Center is a layout widget. It takes a single child and positions it
         // in the middle of the parent.
-        child: Text('Hello', style: TextStyle(color: Colors.amber)),
+        child: Container(
+          height: double.infinity,
+          width: double.infinity,
+          margin: EdgeInsets.all(50.0),
+          padding: EdgeInsets.all(50.0),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(25.0),
+            color: Colors.red,
+          ),
+          child: Container(
+            height: double.infinity,
+            width: double.infinity,
+            padding: EdgeInsets.all(50.0),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(25.0),
+              color: Colors.orange,
+            ),
+            child: Text('Hello', style: TextStyle(color: Colors.black)),
+          ),
+        ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
